@@ -13,6 +13,7 @@ import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.example.gametime.databinding.ActivityLoginBinding
+import com.example.gametime.ui.home.HomeFragment
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -97,6 +98,9 @@ class LoginActivity : AppCompatActivity() {
                         val mainActivityIntent = Intent(this@LoginActivity, MainActivity::class.java)
                         mainActivityIntent.putExtra(EXTRA_USER_ID, user?.objectId)
                         startActivity(mainActivityIntent)
+//                        val bundle = Bundle()
+//                        bundle.putString(BUNDLE_USER_ID,user?.userId)
+
 
                         finish()
 
