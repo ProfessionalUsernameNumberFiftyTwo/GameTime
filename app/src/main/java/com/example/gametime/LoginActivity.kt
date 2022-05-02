@@ -94,9 +94,9 @@ class LoginActivity : AppCompatActivity() {
                         Log.d(TAG, "handleResponse: ${user?.email}")
                         Toast.makeText(this@LoginActivity, "${user?.getProperty("username")} has logged in.", Toast.LENGTH_SHORT).show()
 
-//                        val birthdayListIntent = Intent(this@LoginActivity, BirthdayListActivity::class.java)
-//                        birthdayListIntent.putExtra(EXTRA_USER_ID, user?.objectId)
-//                        startActivity(birthdayListIntent)
+                        val mainActivityIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                        mainActivityIntent.putExtra(EXTRA_USER_ID, user?.objectId)
+                        startActivity(mainActivityIntent)
 
                         finish()
 

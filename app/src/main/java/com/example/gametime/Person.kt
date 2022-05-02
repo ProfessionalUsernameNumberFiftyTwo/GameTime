@@ -1,7 +1,7 @@
 package com.example.gametime
 
 data class Person (
-    var name : String,
-    var ownerId : String,
-    var objectId : String
+    var name : String = "Default",
+    var ownerId : String? = null,
+    var objectId : String? = null
     )
