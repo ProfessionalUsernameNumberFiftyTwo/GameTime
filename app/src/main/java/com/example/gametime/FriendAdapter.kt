@@ -8,6 +8,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
 class FriendAdapter(var userList: List<Person>) : RecyclerView.Adapter<FriendAdapter.ViewHolder>() {
+    // list that contains lists
+    // we want to access those inner lists and add them to the original list
+    var gameList = userList.flatMap {
+        it.gameplay
+    }
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val layout : ConstraintLayout
@@ -33,10 +39,14 @@ class FriendAdapter(var userList: List<Person>) : RecyclerView.Adapter<FriendAda
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val context = holder.layout.context
         val user = userList[position]
-
+        val game = gameList[position]
+        holder.textViewUser.text = user.name
+        holder.textViewGame.text = game.game
+        holder.textViewTime.text = game.time.toString()
+        // holder.layout.setOnClickListener{}
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return gameList.size
     }
 }
