@@ -7,5 +7,6 @@ import kotlinx.parcelize.Parcelize
 data class Gameplay(
     var game: String = "default",
     var time: Int = 0,
-    var player: String = "name"
+    var player: String = "name",
+    var image: String = ""
 ) : Parcelable

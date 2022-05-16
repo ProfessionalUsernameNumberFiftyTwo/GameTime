@@ -9,12 +9,28 @@
         android:id="@+id/navigation_home"
         android:name="com.example.gametime.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_homeDetail"
+            app:destination="@id/navigation_homeDetail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_friends"
         android:name="com.example.gametime.ui.friends.FriendsFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_friends" />
+        tools:layout="@layout/fragment_friends" >
+        <action
+            android:id="@+id/action_navigation_friends_to_navigation_friendsDetail"
+            app:destination="@id/navigation_friendsDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_homeDetail"
+        android:name="com.example.gametime.HomeDetailFragment"
+        android:label="HomeDetailFragment" />
+    <fragment
+        android:id="@+id/navigation_friendsDetail"
+        android:name="com.example.gametime.FriendsDetailFragment"
+        android:label="FriendsDetailFragment" />
 
 </navigation>
