@@ -3,33 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/nav_home"
         android:name="com.example.gametime.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_homeDetail"
-            app:destination="@id/navigation_homeDetail" />
+            android:id="@+id/action_nav_home_to_nav_homeDetail"
+            app:destination="@id/nav_homeDetail" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_friends"
+        android:id="@+id/nav_friends"
         android:name="com.example.gametime.ui.friends.FriendsFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_friends" >
         <action
-            android:id="@+id/action_navigation_friends_to_navigation_friendsDetail"
-            app:destination="@id/navigation_friendsDetail" />
+            android:id="@+id/action_nav_friends_to_nav_friendsDetail"
+            app:destination="@id/nav_friendsDetail" />
     </fragment>
     <fragment
-        android:id="@+id/navigation_homeDetail"
+        android:id="@+id/nav_homeDetail"
         android:name="com.example.gametime.HomeDetailFragment"
         android:label="HomeDetailFragment" />
     <fragment
-        android:id="@+id/navigation_friendsDetail"
+        android:id="@+id/nav_friendsDetail"
         android:name="com.example.gametime.FriendsDetailFragment"
         android:label="FriendsDetailFragment" />
 

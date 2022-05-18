@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -19,6 +20,7 @@ import com.example.gametime.Person
 import com.example.gametime.R
 import com.example.gametime.databinding.FragmentHomeBinding
 import com.example.gametime.databinding.FragmentHomeDetailBinding
+import com.squareup.picasso.Picasso
 
 class HomeDetailFragment : Fragment() {
 
@@ -36,6 +38,18 @@ class HomeDetailFragment : Fragment() {
 
         _binding = FragmentHomeDetailBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        val image = arguments?.getString(FriendAdapter.BUNDLE_IMAGE) ?: Constants.DEFAULT_IMAGE
+        val game = arguments?.getString(FriendAdapter.BUNDLE_GAME) ?: ""
+        val time = arguments?.getString(FriendAdapter.BUNDLE_TIME) ?: ""
+
+        val imageView: ImageView = binding.imageViewHomeDetail
+        Picasso.get().load(image).placeholder(R.drawable.sammich).into(imageView)
+
+        val textViewGame = binding.textViewHomeDetailGame
+        textViewGame.text = game
+        val textViewTime = binding.textViewHomeDetailTime
+        textViewTime.text = "${time} hours played"
 
         return root
     }

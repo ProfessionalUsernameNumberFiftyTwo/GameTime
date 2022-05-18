@@ -1,13 +1,22 @@
 package com.example.gametime
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
 class GameAdapter(var userList: List<Person>) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
+
+    companion object {
+        val BUNDLE_GAME = "game"
+        val BUNDLE_TIME = "time"
+        val BUNDLE_IMAGE = "image"
+    }
+
     var gameList = userList.flatMap {
         it.gameplay
     }
@@ -38,7 +47,13 @@ class GameAdapter(var userList: List<Person>) : RecyclerView.Adapter<GameAdapter
         val game = gameList[position]
         holder.textViewGame.text = game.game
         holder.textViewTime.text = "${game.time.toString()} hours played"
-        // holder.layout.setOnClickListener {}
+        holder.layout.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString(BUNDLE_GAME, game.game)
+            bundle.putString(BUNDLE_TIME, game.time.toString())
+            bundle.putString(BUNDLE_IMAGE, game.image)
+            Navigation.findNavController(holder.itemView).navigate(R.id.action_nav_home_to_nav_homeDetail)
+        }
     }
 
     override fun getItemCount(): Int {

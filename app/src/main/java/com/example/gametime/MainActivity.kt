@@ -1,18 +1,12 @@
 package com.example.gametime
 
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.backendless.Backendless
-import com.backendless.async.callback.AsyncCallback
-import com.backendless.exceptions.BackendlessFault
-import com.backendless.persistence.DataQueryBuilder
 import com.example.gametime.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_friends
+                R.id.nav_home, R.id.nav_friends
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
