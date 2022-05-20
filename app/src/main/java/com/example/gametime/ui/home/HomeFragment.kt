@@ -9,14 +9,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.backendless.Backendless
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.backendless.persistence.DataQueryBuilder
-import com.example.gametime.LoginActivity
-import com.example.gametime.MainActivity
-import com.example.gametime.Person
-import com.example.gametime.R
+import com.example.gametime.*
 import com.example.gametime.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -63,11 +61,11 @@ class HomeFragment : Fragment() {
             AsyncCallback<List<Person>?> {
             override fun handleResponse(foundPeople: List<Person>?) {
                 // all Person instances have been found
-//                Log.d("BirthdayListActivity", "handleResponse: ${foundPeople.toString()}")
-//                val adapter = BirthdayAdapter((foundPeople ?: listOf()))
-//                binding.recyclerViewBirthdayList.adapter = adapter
-//                binding.recyclerViewBirthdayList.layoutManager =
-//                    LinearLayoutManager(this@BirthdayListActivity)
+                Log.d("HomeFragment", "handleResponse: ${foundPeople.toString()}")
+                val adapter = GameAdapter((foundPeople ?: listOf()))
+                binding.recyclerViewHome.adapter = adapter
+                binding.recyclerViewHome.layoutManager =
+                    LinearLayoutManager(this@HomeFragment.context)
 
             }
 

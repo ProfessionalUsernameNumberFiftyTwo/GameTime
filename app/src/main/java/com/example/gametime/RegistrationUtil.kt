@@ -3,7 +3,7 @@ package com.example.gametime
 object RegistrationUtil {
     // use this in the test class for the is username taken test
     // make another similar list for some taken emails
-    var existingUsers = listOf("cosmicF", "cosmicY", "bob", "alice")
+    var existingUsers = listOf("cosmicF", "cosmicY", "bob", "alice", "Lettuce", "Billiam")
 //    you can use listOf<type>() instead of making the list & adding individually
 //    List<String> blah = new ArrayList<String>();
 //    blah.add("hi")

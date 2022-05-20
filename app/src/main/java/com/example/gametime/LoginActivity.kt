@@ -98,9 +98,6 @@ class LoginActivity : AppCompatActivity() {
                         val mainActivityIntent = Intent(this@LoginActivity, MainActivity::class.java)
                         mainActivityIntent.putExtra(EXTRA_USER_ID, user?.objectId)
                         startActivity(mainActivityIntent)
-//                        val bundle = Bundle()
-//                        bundle.putString(BUNDLE_USER_ID,user?.userId)
-
 
                         finish()
 
@@ -109,6 +106,7 @@ class LoginActivity : AppCompatActivity() {
                     override fun handleFault(fault: BackendlessFault) {
                         // login failed, to get the error code call fault.getCode()
                         Log.d(TAG, "handleFault: ${fault.message}")
+                        Toast.makeText(this@LoginActivity, "Invalid username or password", Toast.LENGTH_SHORT).show()
                     }
                 })
         }
