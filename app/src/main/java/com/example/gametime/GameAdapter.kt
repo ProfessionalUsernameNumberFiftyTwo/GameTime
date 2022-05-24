@@ -52,7 +52,7 @@ class GameAdapter(var userList: List<Person>) : RecyclerView.Adapter<GameAdapter
             bundle.putString(BUNDLE_GAME, game.game)
             bundle.putString(BUNDLE_TIME, game.time.toString())
             bundle.putString(BUNDLE_IMAGE, game.image)
-            Navigation.findNavController(holder.itemView).navigate(R.id.action_nav_home_to_nav_homeDetail)
+            Navigation.findNavController(holder.itemView).navigate(R.id.action_nav_home_to_nav_homeDetail, bundle)
         }
     }
 

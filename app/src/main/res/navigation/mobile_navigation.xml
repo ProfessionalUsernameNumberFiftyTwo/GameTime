@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.example.gametime.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_nav_homeDetail"
             app:destination="@id/nav_homeDetail" />
@@ -19,7 +19,7 @@
         android:id="@+id/nav_friends"
         android:name="com.example.gametime.ui.friends.FriendsFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_friends" >
+        tools:layout="@layout/fragment_friends">
         <action
             android:id="@+id/action_nav_friends_to_nav_friendsDetail"
             app:destination="@id/nav_friendsDetail" />

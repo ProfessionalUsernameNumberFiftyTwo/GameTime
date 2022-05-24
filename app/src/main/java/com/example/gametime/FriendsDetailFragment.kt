@@ -34,7 +34,8 @@ class FriendsDetailFragment : Fragment() {
         val name = arguments?.getString(FriendAdapter.BUNDLE_NAME) ?: ""
 
         val imageView: ImageView = binding.imageViewFriendsDetail
-        Picasso.get().load(image).placeholder(R.drawable.sammich).into(imageView)
+        Picasso.get().setLoggingEnabled(true)
+        Picasso.get().load(image.trim()).placeholder(R.drawable.sammich).into(imageView)
 
         val textViewGame: TextView = binding.textViewFriendsDetailGame
         textViewGame.text = game

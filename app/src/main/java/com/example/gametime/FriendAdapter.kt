@@ -48,14 +48,14 @@ class FriendAdapter(var userList: List<Person>) : RecyclerView.Adapter<FriendAda
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val user = userList[position]
+//        val user = userList[position]
         val game = gameList[position]
-        holder.textViewUser.text = user.name
+        holder.textViewUser.text = game.player
         holder.textViewGame.text = game.game
         holder.textViewTime.text = "${game.time.toString()} hours played"
         holder.layout.setOnClickListener{
             val bundle = Bundle()
-            bundle.putString(BUNDLE_NAME, user.name)
+            bundle.putString(BUNDLE_NAME, game.player)
             bundle.putString(BUNDLE_GAME, game.game)
             bundle.putString(BUNDLE_TIME, game.time.toString())
             bundle.putString(BUNDLE_IMAGE, game.image)

@@ -43,8 +43,10 @@ class HomeDetailFragment : Fragment() {
         val game = arguments?.getString(FriendAdapter.BUNDLE_GAME) ?: ""
         val time = arguments?.getString(FriendAdapter.BUNDLE_TIME) ?: ""
 
+        Log.d("homedetail", "onCreateView: ${arguments?.getString(FriendAdapter.BUNDLE_IMAGE)}")
         val imageView: ImageView = binding.imageViewHomeDetail
-        Picasso.get().load(image).placeholder(R.drawable.sammich).into(imageView)
+        Picasso.get().setLoggingEnabled(true)
+        Picasso.get().load(image.trim()).into(imageView)
 
         val textViewGame = binding.textViewHomeDetailGame
         textViewGame.text = game

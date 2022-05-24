@@ -56,6 +56,7 @@ class HomeFragment : Fragment() {
         val whereClause = "ownerId = '$userId'"
         val queryBuilder = DataQueryBuilder.create()
         queryBuilder.whereClause = whereClause
+        queryBuilder.setRelationsDepth( 2 );
 
         Backendless.Data.of(Person::class.java).find(queryBuilder, object :
             AsyncCallback<List<Person>?> {
