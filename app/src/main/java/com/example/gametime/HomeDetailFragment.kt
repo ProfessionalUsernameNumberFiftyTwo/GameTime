@@ -46,7 +46,7 @@ class HomeDetailFragment : Fragment() {
         Log.d("homedetail", "onCreateView: ${arguments?.getString(FriendAdapter.BUNDLE_IMAGE)}")
         val imageView: ImageView = binding.imageViewHomeDetail
         Picasso.get().setLoggingEnabled(true)
-        Picasso.get().load(image.trim()).into(imageView)
+        Picasso.get().load(image.trim()).resize(500,750).into(imageView)
 
         val textViewGame = binding.textViewHomeDetailGame
         textViewGame.text = game

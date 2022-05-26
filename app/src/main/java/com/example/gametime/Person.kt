@@ -10,5 +10,5 @@ data class Person (
     var ownerId : String? = null,
     var objectId : String? = null,
     var gameplay : List<Gameplay> = listOf(),
-    var friendIds: List<String> = listOf()
+    var friendIds: List<Friend> = listOf()
     ) : Parcelable

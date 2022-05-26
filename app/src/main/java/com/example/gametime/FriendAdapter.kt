@@ -10,7 +10,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gametime.ui.friends.FriendsFragment
 
-class FriendAdapter(var userList: List<Person>) : RecyclerView.Adapter<FriendAdapter.ViewHolder>() {
+class FriendAdapter(var gameList: List<Gameplay>) : RecyclerView.Adapter<FriendAdapter.ViewHolder>() {
     // list that contains lists
     // we want to access those inner lists and add them to the original list
 
@@ -21,9 +21,6 @@ class FriendAdapter(var userList: List<Person>) : RecyclerView.Adapter<FriendAda
         val BUNDLE_IMAGE = "image"
     }
 
-    var gameList = userList.flatMap {
-        it.gameplay
-    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

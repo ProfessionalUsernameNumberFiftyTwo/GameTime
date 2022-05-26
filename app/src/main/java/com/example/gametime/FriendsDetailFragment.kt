@@ -35,7 +35,7 @@ class FriendsDetailFragment : Fragment() {
 
         val imageView: ImageView = binding.imageViewFriendsDetail
         Picasso.get().setLoggingEnabled(true)
-        Picasso.get().load(image.trim()).placeholder(R.drawable.sammich).into(imageView)
+        Picasso.get().load(image.trim()).resize(500,750).into(imageView)
 
         val textViewGame: TextView = binding.textViewFriendsDetailGame
         textViewGame.text = game
@@ -43,6 +43,10 @@ class FriendsDetailFragment : Fragment() {
         textViewTime.text = "${time} hours played"
         val textViewName: TextView = binding.textViewFriendsDetailPlayedBy
         textViewName.text = "Played by ${name}"
+
+        // update title
+        val mainActivity = activity as MainActivity
+        mainActivity.supportActionBar?.title = "Friends"
 
         return root
     }
